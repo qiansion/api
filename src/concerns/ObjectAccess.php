@@ -1,6 +1,6 @@
 <?php
 
-namespace qiansion\api\concerns;
+namespace QianSion\Api\Concerns;
 
 trait ObjectAccess
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace qiansion\api;
+namespace QianSion\Api;
 
 class Exception extends \Exception
 {

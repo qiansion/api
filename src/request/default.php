@@ -1,8 +1,18 @@
 <?php
 
-namespace qiansion\api\request;
+namespace QianSion\Api\Request;
 
-use qiansion\api\Request;
+use QianSion\Api\Request;
+
+
+
+/**
+ * @method $this withName($value)
+ * @method $this withIdNum($value)
+ */
+class kuaidiIndex extends Request
+{
+}
 
 /**
  * @method $this withCity($value)

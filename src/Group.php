@@ -1,6 +1,6 @@
 <?php
 
-namespace qiansionk\api;
+namespace QianSion\Api;
 
 use InvalidArgumentException;
 
@@ -30,7 +30,7 @@ class Group
             $className = $this->name . "\\" . $className;
         }
 
-        return "\\qiansionk\\api\\request\\" . $className;
+        return "\\qiansion\\api\\request\\" . $className;
     }
 
     public function __call($method, $params)

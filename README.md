@@ -18,7 +18,7 @@ composer require qiansion/qiansion-api
 以【快递】查询接口为例
 
 ~~~
-use qiansion\api\Client;
+use QianSion\Api\Client;
 
 $client = new Client("YourAppKey", "YourAppSecret");
 

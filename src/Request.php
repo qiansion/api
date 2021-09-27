@@ -1,12 +1,12 @@
 <?php
 
-namespace qiansion\api;
+namespace QianSion\Api;
 
 use ArgumentCountError;
 use GuzzleHttp\Exception\RequestException;
 use RuntimeException;
-use qiansion\api\concerns\ObjectAccess;
-use qiansion\api\concerns\Str;
+use QianSion\Api\Concerns\ObjectAccess;
+use QianSion\Api\Concerns\Str;
 
 abstract class Request
 {
@@ -27,6 +27,7 @@ abstract class Request
 
     public function __construct(Group $group)
     {
+        pf($group);die;
         $this->group = $group;
     }
 

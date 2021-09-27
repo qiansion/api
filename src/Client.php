@@ -1,19 +1,17 @@
 <?php
 
-namespace qiansion\api;
+namespace QianSion\Api;
 
-use qiansion\api\concerns\InteractsWithHttp;
-use qiansion\api\concerns\InteractsWithRequest;
+use QianSion\Api\Concerns\InteractsWithHttp;
+use QianSion\Api\Concerns\InteractsWithRequest;
 
-include_once __DIR__ . '/request/default.php';
+include_once __DIR__ . '/Request/Default.php';
 
-class Client
-{
+class Client {
     use InteractsWithHttp, InteractsWithRequest;
 
-    public function __call($method, $params)
-    {
-        $file = __DIR__ . '/request/' . $method . '.php';
+    public function __call($method, $params){
+        $file = __DIR__ . '/Request/' . $method . '.php';
         if (file_exists($file)) {
             include_once $file;
             return new Group($this, $method);
