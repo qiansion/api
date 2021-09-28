@@ -25,7 +25,7 @@ $client = new Client("YourAppKey", "YourAppSecret");
 $result = $client->redirectUri('KuaiDi/Query', 'POST')
     ->withOrderNo('快递单号')
     ->request();
-~~~
+
 
 $result = $client->redirectUri('IP/getInfo', 'POST')
     ->withip('114.114.114.114')
