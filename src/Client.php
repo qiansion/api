@@ -1,9 +1,10 @@
 <?php
 
-namespace QianSion\Api;
+namespace qiansion\api;
 
-use QianSion\Api\Concerns\InteractsWithHttp;
-use QianSion\Api\Concerns\InteractsWithRequest;
+use qiansion\api\Concerns\InteractsWithHttp;
+use qiansion\api\Concerns\InteractsWithRequest;
+use qiansion\api\Request;
 
 include_once __DIR__ . '/Request/Default.php';
 
@@ -16,7 +17,9 @@ class Client {
             include_once $file;
             return new Group($this, $method);
         } else {
+            $Group = new Group($this);
             return (new Group($this))->{$method}(...$params);
         }
     }
 }
+

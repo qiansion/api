@@ -18,12 +18,17 @@ composer require qiansion/qiansion-api
 以【快递】查询接口为例
 
 ~~~
-use QianSion\Api\Client;
+use qiansion\api\Client;
 
 $client = new Client("YourAppKey", "YourAppSecret");
 
-$result = $client->kuaidiIndex()
+$result = $client->redirectUri('KuaiDi/Query', 'POST')
     ->withOrderNo('快递单号')
+    ->request();
+~~~
+
+$result = $client->redirectUri('IP/getInfo', 'POST')
+    ->withip('114.114.114.114')
     ->request();
 ~~~
 
@@ -42,3 +47,11 @@ $result = $client->kuaidiIndex()
 | code | int | 返回码,200 表示成功 其它表示失败 |
 | message| string | 返回提示信息 |
 | data| object | 返回数据 |
+
+## 鸣谢
+
+特别鸣谢`ThinkAPI`的优秀设计思路。
+
+## 版权信息
+
+本项目遵循 Apache-2.0 开源协议发布。

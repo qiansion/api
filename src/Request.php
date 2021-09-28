@@ -1,12 +1,12 @@
 <?php
 
-namespace QianSion\Api;
+namespace qiansion\api;
 
 use ArgumentCountError;
 use GuzzleHttp\Exception\RequestException;
 use RuntimeException;
-use QianSion\Api\Concerns\ObjectAccess;
-use QianSion\Api\Concerns\Str;
+use qiansion\api\Concerns\ObjectAccess;
+use qiansion\api\Concerns\Str;
 
 abstract class Request
 {
@@ -25,9 +25,10 @@ abstract class Request
 
     protected $group;
 
-    public function __construct(Group $group)
+    public function __construct(Group $group, $uri = '', $method = '')
     {
-        pf($group);die;
+        $this->uri = $uri ? $uri : 'CheckApi/Status';
+        $this->method = $method ? $method : 'POST';
         $this->group = $group;
     }
 
@@ -39,19 +40,20 @@ abstract class Request
             $this->options['form_params'] = $this->data;
         }
     }
-
+    //废弃
     public function resolveUri()
     {
         if (empty($this->uri)) {
-            $this->uri = Str::snake(class_basename(static::class), "/");
+        //    $this->uri = Str::snake(class_basename(static::class), "/");
         }
     }
 
     public function request()
     {
         $this->resolveOptions();
-        $this->resolveUri();
-
+    //    $this->resolveUri();
+    //    pf($this);die;
+    
         try {
             return $this->group->request($this->method, $this->uri, $this->options);
         } catch (RequestException $e) {

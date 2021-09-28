@@ -1,5 +1,5 @@
 <?php
-namespace QianSion\Api\Concerns;
+namespace qiansion\api\Concerns;
 
 class Str
 {
@@ -172,7 +172,7 @@ class Str
         if (!ctype_lower($value)) {
             $value = preg_replace('/\s+/u', '', $value);
 
-            $value = static::lower(preg_replace('/(.)(?=[A-Z])/u', '$1' . $delimiter, $value));
+            $value = preg_replace('/(.)(?=[A-Z])/u', '$1' . $delimiter, $value);
         }
 
         return static::$snakeCache[$key][$delimiter] = $value;

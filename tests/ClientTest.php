@@ -9,10 +9,10 @@ class ClientTest extends TestCase
 {
     public function testApi()
     {
-        $client = new Client('AppCode');
+        $client = new Client('AppCode', 'AppSecret');
 
-        $result = $client->kuaidiIndex()
-            ->withOrderNo('OrderNo')
+        $result = $client->resolveApi('CheckApi/Status', 'POST')
+        //    ->withOrderNo('OrderNo')  //需要传参的时候在此设置
             ->request();
 
         var_dump($result);

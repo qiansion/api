@@ -1,8 +1,9 @@
 <?php
 
-namespace QianSion\Api;
+namespace qiansion\api;
 
 use InvalidArgumentException;
+use qiansion\api\Request;
 
 class Group
 {
@@ -14,6 +15,7 @@ class Group
         $this->name   = $name;
         $this->client = $client;
     }
+
 
     public function request($method, $uri = '', $options = [])
     {
@@ -44,4 +46,5 @@ class Group
 
         throw new InvalidArgumentException("Api {$method} not found!");
     }
+
 }

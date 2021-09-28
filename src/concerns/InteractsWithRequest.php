@@ -1,8 +1,8 @@
 <?php
 
-namespace QianSion\Api\Concerns;
+namespace qiansion\api\Concerns;
 
-use QianSion\Api\Request\DefaultRequests;
+use qiansion\api\Request\DefaultRequests;
 
 trait InteractsWithRequest
 {
